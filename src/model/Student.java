@@ -56,7 +56,7 @@ public class Student extends Thread{
 						//Una vez lo está atentiendo desocupa la silla.
 						S_waitingRoom.release();
 						
-						System.out.println("El monitor está ayudando a un estudiante."); 
+						System.out.println("Un estudiante entra a ser ayudado por el monitor."); 
 						
 						//Mensaje que muestra la cantidad de sillas disponibles una vez el estudiante entra
 						//a la sala del monitor.
@@ -81,12 +81,13 @@ public class Student extends Thread{
 					//El estudiante despierta al monitor para pedir ayuda.
 					S_monitorHelp.acquire();
 					
+					System.out.println("Un estudiante entra a ser ayudado por el monitor.");
+					
 					//El hilo duerme entre 15 a 25 segundos.
 					//Esto es, el monitor se demora dando la ayuda a un estudiante entre 15 a 25 segundos.
 					
 					sleep((random.nextInt(11)+15)*1000);
 					
-					System.out.println("El monitor está ayudando a un estudiante.");
 					
 					//Una vez el monitor termina de ayudar al estudiante lo libera
 					//para que otra persona pueda ser ayudada.
